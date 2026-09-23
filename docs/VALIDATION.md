@@ -21,10 +21,21 @@ GPU load/warm-up: 8.45 s; CPU load: 7.05 s. These are worker prepare times with 
 - Queue test generates over 29 seconds with playback position unchanged and confirms resume preserves completed segments.
 - Windows NSIS installer builds locally. CI repeats lightweight tests and the Windows build; GPU is not mocked as a CI success.
 
+## Longer run, installed core and memory
+
+Serena generated 72 segments totaling **2,990.32 s (49 min 50 s)**. Measured generation took **1,277.94 s**, RTF **0.42736**. Time from the final PCM segment write to all export files finishing was **58.24 s** (M4B plus chapter MP3/ZIP). The source was a repeated original 120-paragraph Chinese passage. This is throughput/export evidence; human end-to-end narration quality is a separate check.
+
+The NSIS installer completed with exit code 0 in an isolated directory on the development PC. Its installed standalone core then ran with only Windows System32 on PATH, used the standalone CPU pack, generated two English chapters, encoded all formats, served an authenticated download and HTTP Range 206, released its model, and exited with code 0. This verifies absence of a required development Python on PATH; it does not turn this PC into a clean Windows machine.
+
+An empty installed app with no model used **464,338,944 bytes** total working set across Tauri, WebView2, the packaged core and console helper at one idle sample. Summing working sets can count shared pages multiple times. This is not private memory or a long-duration leak test.
+
+Additional CPU 4/8-thread measurements are in `measurements/cpu-threads*.json`. Eight threads were faster across this small sample in aggregate (voice RTFs 4.118 / 3.460 / 3.577). The UI supports selecting eight; the general default remains a conservative six pending representative long-text tuning across CPUs. The 8-thread worker reached **5,884,964,864 bytes peak working set**, excluding UI/core. Samples are too small to establish a universal optimum.
+
 ## Download sizes
 
 | Artifact | Bytes |
 | --- | ---: |
+| Windows installer | 43,922,124 |
 | CPU runtime ZIP | 429,705,945 |
 | CUDA runtime ZIP (three download parts) | 2,755,622,299 |
 | Official model files | approximately 2,498,383,610 |

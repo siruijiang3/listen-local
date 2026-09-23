@@ -1,0 +1,51 @@
+{
+  "ready": {
+    "type": "ready",
+    "protocol": 1,
+    "device": "cpu",
+    "reason": null,
+    "streaming": false,
+    "loadSeconds": 5.938141599996015
+  },
+  "records": [
+    {
+      "speaker": "Serena",
+      "firstBlock": 11.86053029994946,
+      "audioSeconds": 2.88,
+      "generationSeconds": 11.858462199917994,
+      "rtf": 4.117521597193749,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 18.544479200034402,
+      "audioSeconds": 5.36,
+      "generationSeconds": 18.543332200031728,
+      "rtf": 3.4595769029909937,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 8.299438599962741,
+      "audioSeconds": 2.32,
+      "generationSeconds": 8.298176100011915,
+      "rtf": 3.5768000431085842,
+      "text": "The rain stopped before sunrise."
+    }
+  ],
+  "threads": 8,
+  "processMemory": {
+    "rss": 5073494016,
+    "vms": 8126267392,
+    "num_page_faults": 2491727,
+    "peak_wset": 5884964864,
+    "wset": 5073494016,
+    "peak_paged_pool": 8435592,
+    "paged_pool": 2699816,
+    "peak_nonpaged_pool": 455576,
+    "nonpaged_pool": 111784,
+    "pagefile": 8126267392,
+    "peak_pagefile": 9131982848,
+    "private": 8126267392
+  }
+}

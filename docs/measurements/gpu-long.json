@@ -1,0 +1,10 @@
+{
+  "speaker": "Serena",
+  "actual_device": "cuda",
+  "status": "done",
+  "generation_seconds": 1277.9434289997444,
+  "rtf": 0.42736009156202154,
+  "audioSeconds": 2990.32,
+  "segments": 72,
+  "finalSegmentToExportsSeconds": 58.23689365386963
+}

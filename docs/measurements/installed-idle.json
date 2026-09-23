@@ -1,0 +1,57 @@
+{
+  "processes": [
+    {
+      "ProcessName": "listen-local",
+      "WorkingSet64": 29982720,
+      "PeakWorkingSet64": 31653888
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 139948032,
+      "PeakWorkingSet64": 141742080
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 22667264,
+      "PeakWorkingSet64": 22695936
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 76619776,
+      "PeakWorkingSet64": 79716352
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 45281280,
+      "PeakWorkingSet64": 45395968
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 19619840,
+      "PeakWorkingSet64": 19619840
+    },
+    {
+      "ProcessName": "msedgewebview2",
+      "WorkingSet64": 80617472,
+      "PeakWorkingSet64": 80617472
+    },
+    {
+      "ProcessName": "listen-core",
+      "WorkingSet64": 11489280,
+      "PeakWorkingSet64": 12328960
+    },
+    {
+      "ProcessName": "conhost",
+      "WorkingSet64": 7467008,
+      "PeakWorkingSet64": 7467008
+    },
+    {
+      "ProcessName": "listen-core",
+      "WorkingSet64": 30646272,
+      "PeakWorkingSet64": 30646272
+    }
+  ],
+  "utc": "2026-09-23T23:33:08.0575692Z",
+  "sample": "Installed application idle, empty library, no model",
+  "totalWorkingSet": 464338944.0
+}

@@ -7,7 +7,8 @@ Application source is GPL-3.0-or-later; see `LICENSE`. Third-party components re
 | React | MIT — https://github.com/facebook/react |
 | Tauri | MIT / Apache-2.0 — https://github.com/tauri-apps/tauri |
 | Python 3.12.10 | PSF — https://www.python.org/downloads/release/python-31210/ |
-| Qwen3-TTS / Qwen-TTS-HF | Apache-2.0 — https://github.com/QwenLM/Qwen3-TTS |
+| Qwen3-TTS | Apache-2.0 — https://github.com/QwenLM/Qwen3-TTS |
+| Qwen-TTS-HF compatibility distribution | Apache-2.0 — https://github.com/andimarafioti/Qwen3-TTS/tree/distribution/qwen-tts-hf |
 | Qwen3-TTS 0.6B CustomVoice | Apache-2.0 — https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice |
 | Faster Qwen3-TTS 0.4.0 | MIT — https://github.com/andimarafioti/faster-qwen3-tts |
 | PyTorch | BSD-style — https://github.com/pytorch/pytorch |
@@ -22,3 +23,5 @@ FFmpeg is a separate, unmodified executable from the Windows `imageio-ffmpeg==0.
 Model revision: `85e237c12c027371202489a0ec509ded67b5e4b5`. The downloadable model manifest records every file's official revision URL and SHA-256. Downloaded weights are not part of the application Git repository.
 
 Earlier experimental source and its notices remain in `public/THIRD_PARTY.txt` and `src/vendor/`; none of those browser inference engines or voice packages are bundled with the desktop application.
+
+`qwen-tts-hf` is an unofficial Transformers 5 compatibility distribution, with its own pinned package version; it is not claimed to be an official Qwen wheel. The model weights are official. Releases also provide core/UI notices and the FFmpeg 7.1 upstream source archive. Runtime pack licenses remain alongside distribution metadata.

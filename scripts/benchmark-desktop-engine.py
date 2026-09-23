@@ -6,6 +6,10 @@ import math
 import subprocess
 import time
 from pathlib import Path
+try:
+    import psutil
+except ImportError:
+    psutil = None
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
@@ -59,7 +63,8 @@ try:
                         total += message['samples']
                     if message['type']=='done':
                         records.append({'speaker':voice,'firstBlock':first,'audioSeconds':total/24000,'generationSeconds':message['seconds'],'rtf':message['rtf'],'text':samples[language][index % 5]})
-            args.output.write_text(json.dumps({'ready':ready,'records':records}, ensure_ascii=False, indent=2), encoding='utf-8')
+            memory = psutil.Process(process.pid).memory_info()._asdict() if psutil else None
+            args.output.write_text(json.dumps({'ready':ready,'records':records,'threads':args.threads,'processMemory':memory}, ensure_ascii=False, indent=2), encoding='utf-8')
             print(f'{voice} {index+1}/{args.repeats}: first={first:.3f}, rtf={records[-1]["rtf"]:.3f}', flush=True)
 finally:
     try:

@@ -1,0 +1,34 @@
+{
+  "onnx-community/Kokoro-82M-v1.0-ONNX": {
+    "revision": "1939ad2a8e416c0acfeecc08a694d14ef25f2231",
+    "files": {
+      "onnx/model.onnx": 325532232,
+      "tokenizer.json": 3497,
+      "voices/af_heart.bin": 522240,
+      "voices/bf_emma.bin": 522240,
+      "voices/zf_xiaobei.bin": 522240,
+      "voices/zf_xiaoni.bin": 522240,
+      "voices/zf_xiaoxiao.bin": 522240,
+      "voices/zm_yunyang.bin": 522240
+    }
+  },
+  "onnx-community/Kokoro-82M-v1.1-zh-ONNX": {
+    "revision": "6cc0f0d2ebe369a68b0df87c2b65c1af8c0ac3e3",
+    "files": {
+      "onnx/model.onnx": 339369442,
+      "tokenizer.json": 4944,
+      "voices/zf_001.bin": 522240,
+      "voices/zf_017.bin": 522240,
+      "voices/zm_010.bin": 522240
+    }
+  },
+  "rhasspy/piper-voices": {
+    "revision": "c10ece1aade47bb51c153c893d14e5bf8e5b7117",
+    "files": {
+      "en/en_US/lessac/high/en_US-lessac-high.onnx": 113895201,
+      "en/en_US/lessac/high/en_US-lessac-high.onnx.json": 4883,
+      "zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx": 63201294,
+      "zh/zh_CN/huayan/medium/zh_CN-huayan-medium.onnx.json": 4822
+    }
+  }
+}

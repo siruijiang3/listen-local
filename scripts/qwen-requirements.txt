@@ -1,0 +1,8 @@
+# Install torch==2.6.0 and torchaudio==2.6.0 from the official cu124 index first.
+# Keep the official Qwen dependency pins; constrain its unbounded UI/audio deps.
+qwen-tts==0.1.1
+gradio==5.49.1
+librosa==0.11.0
+numpy==2.2.6
+numba==0.61.2
+huggingface-hub==0.36.2

@@ -1,0 +1,8 @@
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124
+faster-qwen3-tts==0.4.0
+qwen-tts-hf==0.1.1.post1
+transformers==5.15.1
+websockets==15.0.1
+psutil==7.2.2

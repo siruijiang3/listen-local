@@ -1,0 +1,187 @@
+.realtime {
+  max-width: 1320px;
+  margin: auto;
+  padding: 30px 42px 70px;
+  color: #243930;
+  background: #f5f5ef;
+  min-height: 100vh;
+}
+.realtime nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.realtime nav a {
+  text-decoration: none;
+}
+.realtime header {
+  margin: 50px 0 35px;
+}
+.realtime .eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #68794b;
+}
+.realtime h1 {
+  font-size: 46px;
+  line-height: 1.22;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  margin: 12px 0 18px;
+}
+.realtime header > p:last-child {
+  color: #687369;
+}
+.rt-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+}
+.rt-panel {
+  border: 1px solid #dce1d5;
+  border-radius: 16px;
+  background: #fff;
+  padding: 26px;
+}
+.rt-modes {
+  display: flex;
+  gap: 8px;
+}
+.realtime button {
+  border: 1px solid #d9dfd1;
+  background: #f4f6ef;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #33452d;
+}
+.realtime button.primary,
+.realtime button.selected {
+  background: #405737;
+  color: #fff;
+  border-color: #405737;
+}
+.rt-hint {
+  font-size: 12px;
+  color: #74806d;
+  line-height: 1.7;
+}
+.rt-fields {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.75fr;
+  gap: 12px;
+}
+.realtime label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  color: #697060;
+  margin: 14px 0;
+}
+.realtime select,
+.realtime textarea {
+  width: 100%;
+  border: 1px solid #dde2d6;
+  border-radius: 7px;
+  padding: 10px;
+  color: #243930;
+  background: #fafbf8;
+}
+.realtime textarea {
+  resize: vertical;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.rt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rt-actions button {
+  font-size: 13px;
+}
+.rt-status {
+  padding: 12px;
+  background: #edf3e5;
+  border-radius: 7px;
+  font-size: 13px;
+}
+.rt-error {
+  padding: 12px;
+  background: #fff0e8;
+  color: #974322;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.realtime h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+.rt-big {
+  font-size: 44px;
+  line-height: 1.3;
+  margin-top: 28px;
+}
+.rt-big small {
+  display: block;
+  font-size: 12px;
+  color: #7a8573;
+}
+.realtime meter {
+  width: 100%;
+  height: 14px;
+  margin: 15px 0;
+}
+.realtime dl {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  font-size: 12px;
+  line-height: 2.5;
+}
+.realtime dt {
+  color: #6e7967;
+}
+.realtime dd {
+  text-align: right;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.rt-tests {
+  margin-top: 24px;
+}
+.rt-comparisons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.rt-comparisons audio {
+  width: 100%;
+}
+.rt-tests p {
+  font-size: 13px;
+  color: #6e7967;
+}
+.rt-tests pre {
+  white-space: pre-wrap;
+  font-size: 12px;
+}
+.realtime details {
+  margin-top: 20px;
+  font-size: 12px;
+}
+@media (max-width: 850px) {
+  .realtime {
+    padding: 20px;
+  }
+  .rt-grid {
+    grid-template-columns: 1fr;
+  }
+  .rt-comparisons {
+    grid-template-columns: 1fr;
+  }
+  .realtime h1 {
+    font-size: 36px;
+  }
+}

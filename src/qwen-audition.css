@@ -1,0 +1,317 @@
+.qwen-page {
+  background: #f5f4ef;
+  min-height: 100vh;
+  color: #23392f;
+}
+.qwen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 5vw;
+  border-bottom: 1px solid #dce0d4;
+  gap: 20px;
+}
+.qwen-header a {
+  text-decoration: none;
+  font-size: 13px;
+}
+.qwen-header a:first-child {
+  font-weight: 700;
+  font-size: 23px;
+}
+.qwen-header span {
+  margin-left: 10px;
+  letter-spacing: 2px;
+  font-size: 10px;
+  color: #778170;
+}
+.qwen-main {
+  max-width: 1100px;
+  padding: 44px 28px 20px;
+  margin: auto;
+}
+.qwen-kicker {
+  color: #718356;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.qwen-intro h1 {
+  font-size: clamp(30px, 4vw, 46px);
+  letter-spacing: -1px;
+  margin: 10px 0;
+}
+.qwen-intro > p:last-child {
+  color: #6e796d;
+  margin-bottom: 30px;
+}
+.qwen-banner {
+  border-left: 3px solid #8b9e66;
+  background: #eaf0e1;
+  padding: 18px 22px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+.qwen-banner p {
+  margin: 7px 0 0;
+  line-height: 1.9;
+}
+.qwen-actions,
+.qwen-section-heading,
+.qwen-export,
+.qwen-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.qwen-actions {
+  margin: 28px 0 24px;
+  flex-wrap: wrap;
+}
+.qwen-languages {
+  display: flex;
+  gap: 4px;
+  background: #e5e8df;
+  border-radius: 8px;
+  padding: 4px;
+}
+.qwen-languages button {
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 17px;
+  color: #687263;
+  font-size: 13px;
+}
+.qwen-languages button[aria-pressed="true"] {
+  background: #fff;
+  color: #243b29;
+  box-shadow: 0 2px 6px #1a300f10;
+}
+.qwen-secondary {
+  background: transparent;
+  border: 1px solid #bbc5b1;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 12px;
+  color: #405837;
+}
+.qwen-text-panel {
+  background: #fffefa;
+  border: 1px solid #e0e3d7;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 30px;
+}
+.qwen-section-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+.qwen-section-heading > span {
+  font-size: 11px;
+  color: #7d8776;
+}
+.qwen-passages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 20px 0;
+}
+.qwen-passages button {
+  text-align: left;
+  border: 1px solid #e1e5da;
+  background: #fafbf7;
+  border-radius: 7px;
+  padding: 10px 13px;
+  color: #4a5a40;
+  font-size: 13px;
+}
+.qwen-passages small {
+  display: block;
+  margin-bottom: 3px;
+  color: #8a957f;
+  font-size: 10px;
+}
+.qwen-passages button[aria-pressed="true"] {
+  border-color: #8da46c;
+  background: #ecf2e0;
+}
+.qwen-text-panel h3 {
+  font-size: 14px;
+  margin: 22px 0 10px;
+}
+.qwen-original {
+  white-space: pre-wrap;
+  line-height: 2.1;
+  max-height: 290px;
+  overflow: auto;
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+.qwen-text-panel > small {
+  color: #7c8673;
+  font-size: 11px;
+}
+.qwen-voices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+.qwen-voice {
+  border: 1px solid #dce3d0;
+  border-radius: 12px;
+  background: #fffefa;
+  padding: 23px;
+  min-width: 0;
+}
+.qwen-voice-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.qwen-avatar {
+  display: grid;
+  place-items: center;
+  background: #e8eedb;
+  color: #738649;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 22px;
+  font-family: Georgia, serif;
+}
+.qwen-voice-heading h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.qwen-voice-heading small {
+  font-size: 10px;
+  color: #88917f;
+}
+.qwen-pending {
+  margin-left: auto;
+  color: #7e8d66;
+  font-size: 10px;
+}
+.qwen-voice audio {
+  width: 100%;
+}
+.qwen-audio-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #849075;
+  margin: 9px 0 22px;
+  gap: 10px;
+}
+.qwen-audio-meta a {
+  color: #44662d;
+}
+.qwen-verdict {
+  display: flex;
+  gap: 8px;
+}
+.qwen-verdict button {
+  border: 1px solid #d6ddca;
+  border-radius: 6px;
+  background: white;
+  color: #536149;
+  font-size: 12px;
+  padding: 8px 14px;
+}
+.qwen-verdict button[aria-pressed="true"] {
+  background: #314d2c;
+  border-color: #314d2c;
+  color: white;
+}
+.qwen-issues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 13px;
+  margin: 17px 0;
+  font-size: 11px;
+  color: #718064;
+}
+.qwen-issues label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.qwen-issues input {
+  accent-color: #718b48;
+}
+.qwen-voice textarea {
+  width: 100%;
+  min-height: 82px;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #dde1d5;
+  background: #fcfdf9;
+  font-size: 12px;
+  color: #45553c;
+}
+.qwen-voice details {
+  margin-top: 18px;
+  border-top: 1px solid #edf0e7;
+  padding-top: 14px;
+  font-size: 11px;
+  color: #79846f;
+  overflow-wrap: anywhere;
+}
+.qwen-voice details p,
+.qwen-voice details li {
+  line-height: 1.8;
+}
+.qwen-voice summary,
+.qwen-provenance summary {
+  cursor: pointer;
+}
+.qwen-unavailable {
+  padding: 45px 0;
+  color: #7a856e;
+  font-size: 13px;
+}
+.qwen-export {
+  font-size: 12px;
+  margin: 28px 0;
+  flex-wrap: wrap;
+  color: #7a8670;
+}
+.qwen-provenance {
+  padding: 18px 0;
+  border-top: 1px solid #dce1d2;
+  color: #7c8871;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.qwen-footer {
+  border-top: 1px solid #dce1d2;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 11px;
+  color: #859178;
+}
+@media (max-width: 600px) {
+  .qwen-main {
+    padding: 25px 16px;
+  }
+  .qwen-header {
+    padding: 17px;
+  }
+  .qwen-header span {
+    display: none;
+  }
+  .qwen-passages {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .qwen-text-panel {
+    padding: 17px;
+  }
+  .qwen-section-heading > span {
+    max-width: 120px;
+    text-align: right;
+  }
+}

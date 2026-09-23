@@ -1,0 +1,492 @@
+{
+  "ready": {
+    "type": "ready",
+    "protocol": 1,
+    "device": "cuda",
+    "reason": null,
+    "streaming": true,
+    "loadSeconds": 8.45150610001292
+  },
+  "records": [
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.33860969997476786,
+      "audioSeconds": 3.44,
+      "generationSeconds": 1.6704776000697166,
+      "rtf": 0.48560395350863855,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.32911809999495745,
+      "audioSeconds": 4.32,
+      "generationSeconds": 2.0682960000121966,
+      "rtf": 0.47877222222504545,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.38924119994044304,
+      "audioSeconds": 7.68,
+      "generationSeconds": 3.601053799968213,
+      "rtf": 0.4688872135375277,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3301522000692785,
+      "audioSeconds": 5.84,
+      "generationSeconds": 2.630416200030595,
+      "rtf": 0.45041373288195125,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.30984370002988726,
+      "audioSeconds": 7.76,
+      "generationSeconds": 3.491375799989328,
+      "rtf": 0.4499195618542948,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.33329420001246035,
+      "audioSeconds": 2.88,
+      "generationSeconds": 1.344999499968253,
+      "rtf": 0.46701371526675456,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.33757600001990795,
+      "audioSeconds": 4.48,
+      "generationSeconds": 2.0271117999218404,
+      "rtf": 0.4524803124825536,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3272530999965966,
+      "audioSeconds": 7.68,
+      "generationSeconds": 3.4480161000974476,
+      "rtf": 0.4489604297001885,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.33323969994671643,
+      "audioSeconds": 6.08,
+      "generationSeconds": 2.7627975000068545,
+      "rtf": 0.454407483553759,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.32877219992224127,
+      "audioSeconds": 8.0,
+      "generationSeconds": 3.612332500051707,
+      "rtf": 0.4515415625064634,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3349367000628263,
+      "audioSeconds": 2.96,
+      "generationSeconds": 1.3719152000267059,
+      "rtf": 0.4634848648738871,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3336763000115752,
+      "audioSeconds": 4.8,
+      "generationSeconds": 2.3894988999236375,
+      "rtf": 0.4978122708174245,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3440405000001192,
+      "audioSeconds": 6.72,
+      "generationSeconds": 3.0983882999280468,
+      "rtf": 0.46106968748929267,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3349693000782281,
+      "audioSeconds": 5.28,
+      "generationSeconds": 2.4217359999893233,
+      "rtf": 0.4586621212100991,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3323755000019446,
+      "audioSeconds": 8.08,
+      "generationSeconds": 3.6861636000685394,
+      "rtf": 0.45620836634511625,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.31430769991129637,
+      "audioSeconds": 3.36,
+      "generationSeconds": 1.5854763999814168,
+      "rtf": 0.47186797618494547,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3376923999749124,
+      "audioSeconds": 4.48,
+      "generationSeconds": 2.0968762000557035,
+      "rtf": 0.4680527232267195,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.35773829999379814,
+      "audioSeconds": 7.52,
+      "generationSeconds": 3.473539099912159,
+      "rtf": 0.461906795201085,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.3340531999710947,
+      "audioSeconds": 6.64,
+      "generationSeconds": 3.0231196000240743,
+      "rtf": 0.4552890963891678,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Serena",
+      "firstBlock": 0.347263399977237,
+      "audioSeconds": 8.88,
+      "generationSeconds": 4.0630423000548035,
+      "rtf": 0.4575498085647301,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3470351999858394,
+      "audioSeconds": 3.68,
+      "generationSeconds": 1.6952818999998271,
+      "rtf": 0.4606744293477791,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3456274999771267,
+      "audioSeconds": 6.08,
+      "generationSeconds": 2.775802699965425,
+      "rtf": 0.4565464967048396,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3407032999675721,
+      "audioSeconds": 8.72,
+      "generationSeconds": 3.912480500061065,
+      "rtf": 0.44867895642902117,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33961000002454966,
+      "audioSeconds": 7.2,
+      "generationSeconds": 3.2563847000710666,
+      "rtf": 0.45227565278764814,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3414131000172347,
+      "audioSeconds": 11.6,
+      "generationSeconds": 5.214453499997035,
+      "rtf": 0.44952185344802026,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33189950010273606,
+      "audioSeconds": 3.44,
+      "generationSeconds": 1.5688666000496596,
+      "rtf": 0.4560658721074592,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33963299996685237,
+      "audioSeconds": 6.32,
+      "generationSeconds": 2.873896799981594,
+      "rtf": 0.4547305063262016,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33685319998767227,
+      "audioSeconds": 9.04,
+      "generationSeconds": 4.085066900006495,
+      "rtf": 0.4518879314166478,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33666430006269366,
+      "audioSeconds": 6.8,
+      "generationSeconds": 3.0603162999032065,
+      "rtf": 0.450046514691648,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33709020004607737,
+      "audioSeconds": 12.88,
+      "generationSeconds": 5.782326399930753,
+      "rtf": 0.4489383850877913,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3365003999788314,
+      "audioSeconds": 9.04,
+      "generationSeconds": 4.071068400051445,
+      "rtf": 0.4503394247844519,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.33495209994725883,
+      "audioSeconds": 6.96,
+      "generationSeconds": 3.1324028000235558,
+      "rtf": 0.4500578735666028,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3376439999556169,
+      "audioSeconds": 8.56,
+      "generationSeconds": 3.8562749000266194,
+      "rtf": 0.4504994042087172,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3352250000461936,
+      "audioSeconds": 6.8,
+      "generationSeconds": 3.0685609999345616,
+      "rtf": 0.45125897057861203,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.34275260008871555,
+      "audioSeconds": 10.4,
+      "generationSeconds": 4.7069908999837935,
+      "rtf": 0.4525952788445955,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.34337500005494803,
+      "audioSeconds": 4.24,
+      "generationSeconds": 1.9345747999614105,
+      "rtf": 0.4562676415003326,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3420160000678152,
+      "audioSeconds": 5.6,
+      "generationSeconds": 2.55866129999049,
+      "rtf": 0.4569038035697304,
+      "text": "她轻轻推开窗，看见院子里的树叶还挂着水珠。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3432764000026509,
+      "audioSeconds": 9.68,
+      "generationSeconds": 4.419766100007109,
+      "rtf": 0.45658740702552786,
+      "text": "这是一段关于本地语音生成的测试。我们会保留原文，不改写，也不删去句子。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3384971000486985,
+      "audioSeconds": 7.28,
+      "generationSeconds": 3.3112211999250576,
+      "rtf": 0.4548380769127826,
+      "text": "“今天要去哪里？”他问。“沿着河边走走吧。”她回答。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 0.3407835999969393,
+      "audioSeconds": 10.64,
+      "generationSeconds": 4.802055799984373,
+      "rtf": 0.4513210338331178,
+      "text": "夜色渐深，小镇慢慢安静下来。远处的灯还亮着，像有人在等待归家的旅人。"
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.34872180002275854,
+      "audioSeconds": 2.4,
+      "generationSeconds": 1.121114799985662,
+      "rtf": 0.46713116666069254,
+      "text": "The rain stopped before sunrise."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.35997500002849847,
+      "audioSeconds": 3.76,
+      "generationSeconds": 1.7485330000054091,
+      "rtf": 0.46503537234186415,
+      "text": "She opened the window and listened to the quiet garden."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3305419000098482,
+      "audioSeconds": 6.08,
+      "generationSeconds": 2.7806709998985752,
+      "rtf": 0.45734720393068673,
+      "text": "This is a local audiobook test. Every sentence should be preserved, including the ending."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.34783919993788004,
+      "audioSeconds": 5.52,
+      "generationSeconds": 2.5201203000033274,
+      "rtf": 0.4565435326092985,
+      "text": "“Where shall we go today?” he asked. “Let us walk along the river,” she replied."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3395890999818221,
+      "audioSeconds": 8.48,
+      "generationSeconds": 3.8315436999546364,
+      "rtf": 0.45183298348521655,
+      "text": "Night settled over the little town. A light in the distance was still shining, waiting for someone to come home."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3464679999742657,
+      "audioSeconds": 2.24,
+      "generationSeconds": 1.0578685000073165,
+      "rtf": 0.47226272321755197,
+      "text": "The rain stopped before sunrise."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3412778000347316,
+      "audioSeconds": 4.32,
+      "generationSeconds": 1.968599799904041,
+      "rtf": 0.4556943981259354,
+      "text": "She opened the window and listened to the quiet garden."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.34418810007628053,
+      "audioSeconds": 5.84,
+      "generationSeconds": 2.6648653000593185,
+      "rtf": 0.4563125513800203,
+      "text": "This is a local audiobook test. Every sentence should be preserved, including the ending."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3413400000426918,
+      "audioSeconds": 5.44,
+      "generationSeconds": 2.4895599000155926,
+      "rtf": 0.45763968750286627,
+      "text": "“Where shall we go today?” he asked. “Let us walk along the river,” she replied."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3428134999703616,
+      "audioSeconds": 7.2,
+      "generationSeconds": 3.2697228000033647,
+      "rtf": 0.45412816666713396,
+      "text": "Night settled over the little town. A light in the distance was still shining, waiting for someone to come home."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3352019999874756,
+      "audioSeconds": 2.56,
+      "generationSeconds": 1.1875477000139654,
+      "rtf": 0.4638858203179552,
+      "text": "The rain stopped before sunrise."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.33854489994701,
+      "audioSeconds": 3.2,
+      "generationSeconds": 1.4698611999629065,
+      "rtf": 0.4593316249884083,
+      "text": "She opened the window and listened to the quiet garden."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3475516999606043,
+      "audioSeconds": 5.36,
+      "generationSeconds": 2.4526055000023916,
+      "rtf": 0.4575756529855208,
+      "text": "This is a local audiobook test. Every sentence should be preserved, including the ending."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.34060260001569986,
+      "audioSeconds": 4.96,
+      "generationSeconds": 2.2771332999691367,
+      "rtf": 0.45909945563893884,
+      "text": "“Where shall we go today?” he asked. “Let us walk along the river,” she replied."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.35194720001891255,
+      "audioSeconds": 7.36,
+      "generationSeconds": 3.413643200066872,
+      "rtf": 0.4638102174003902,
+      "text": "Night settled over the little town. A light in the distance was still shining, waiting for someone to come home."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.36137210007291287,
+      "audioSeconds": 2.72,
+      "generationSeconds": 1.3216078000841662,
+      "rtf": 0.4858852206191787,
+      "text": "The rain stopped before sunrise."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3488961999537423,
+      "audioSeconds": 3.36,
+      "generationSeconds": 1.549712699954398,
+      "rtf": 0.46122401784357087,
+      "text": "She opened the window and listened to the quiet garden."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.35924460005480796,
+      "audioSeconds": 6.48,
+      "generationSeconds": 2.9884519999613985,
+      "rtf": 0.46118086419157384,
+      "text": "This is a local audiobook test. Every sentence should be preserved, including the ending."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3478136999765411,
+      "audioSeconds": 6.16,
+      "generationSeconds": 2.8139161999570206,
+      "rtf": 0.4568045779151007,
+      "text": "“Where shall we go today?” he asked. “Let us walk along the river,” she replied."
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 0.3480958000291139,
+      "audioSeconds": 6.88,
+      "generationSeconds": 3.124571799999103,
+      "rtf": 0.4541528779068464,
+      "text": "Night settled over the little town. A light in the distance was still shining, waiting for someone to come home."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "ready": {
+    "type": "ready",
+    "protocol": 1,
+    "device": "cpu",
+    "reason": null,
+    "streaming": false,
+    "loadSeconds": 7.054597100010142
+  },
+  "records": [
+    {
+      "speaker": "Serena",
+      "firstBlock": 15.047836799989454,
+      "audioSeconds": 2.88,
+      "generationSeconds": 15.045180900022388,
+      "rtf": 5.224021145841107,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "firstBlock": 21.143219400080852,
+      "audioSeconds": 5.36,
+      "generationSeconds": 21.14155989990104,
+      "rtf": 3.944320876847209,
+      "text": "雨停的时候，天还没有完全亮。"
+    },
+    {
+      "speaker": "Aiden",
+      "firstBlock": 9.746100999996997,
+      "audioSeconds": 2.32,
+      "generationSeconds": 9.744741900009103,
+      "rtf": 4.200319784486683,
+      "text": "The rain stopped before sunrise."
+    }
+  ]
+}

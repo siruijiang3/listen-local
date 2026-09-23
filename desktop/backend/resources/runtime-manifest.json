@@ -1,0 +1,38 @@
+{
+  "cuda": {
+    "id": "listen-runtime-cuda-0.1.0-win-x64",
+    "bytes": 2755622299,
+    "sha256": "d01f854ec7a9fd881300120f925c6621538d4615bf497083c263df44858e38ca",
+    "python": "3.12.10",
+    "pythonArchiveSha256": "4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3",
+    "flavor": "cuda",
+    "version": "0.1.0",
+    "parts": [
+      {
+        "url": "https://github.com/siruijiang3/listen-local/releases/download/v0.1.0/listen-runtime-cuda-0.1.0-win-x64.zip.001",
+        "bytes": 1000000000,
+        "sha256": "5f02f55c38f61245a8db227eca469edfe13aec4f8ca489719ec1954e0c598091"
+      },
+      {
+        "url": "https://github.com/siruijiang3/listen-local/releases/download/v0.1.0/listen-runtime-cuda-0.1.0-win-x64.zip.002",
+        "bytes": 1000000000,
+        "sha256": "a80a05585ba131dce16049a264289671898eed4f0ba334cc7b57b6dd0f731a78"
+      },
+      {
+        "url": "https://github.com/siruijiang3/listen-local/releases/download/v0.1.0/listen-runtime-cuda-0.1.0-win-x64.zip.003",
+        "bytes": 755622299,
+        "sha256": "b99a4648349ce0e5ac4749356c7ca970e45df671f26386ffd9cf50947f916415"
+      }
+    ]
+  },
+  "cpu": {
+    "id": "listen-runtime-cpu-0.1.0-win-x64",
+    "bytes": 429705945,
+    "sha256": "9086ba64b74ceb741cb33a8366496ea70fc4116eda45864cd835f27b21a471e1",
+    "url": "https://github.com/siruijiang3/listen-local/releases/download/v0.1.0/listen-runtime-cpu-0.1.0-win-x64.zip",
+    "python": "3.12.10",
+    "pythonArchiveSha256": "4acbed6dd1c744b0376e3b1cf57ce906f9dc9e95e68824584c8099a63025a3c3",
+    "flavor": "cpu",
+    "version": "0.1.0"
+  }
+}

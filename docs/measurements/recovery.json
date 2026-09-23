@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "restartStatus": "paused",
+  "preservedSegments": 1,
+  "finalSegments": 3,
+  "device": "cpu"
+}

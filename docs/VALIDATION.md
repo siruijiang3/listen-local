@@ -37,6 +37,10 @@ The standalone CUDA pack passed all three voices. Its first prepare in a new ext
 
 The first public Windows CI run passed: https://github.com/siruijiang3/listen-local/actions/runs/35933797460 .
 
+A real CPU task was interrupted through the tray-equivalent shutdown API, restarted as **paused**, resumed, and exported successfully. One completed segment remained byte-for-byte unchanged; all three segments were present at completion. See `measurements/recovery.json` and its runnable validation script. This covers controlled exit during inference, not every forced-crash phase.
+
+Several development-preview playback sessions ran without reported underruns, but were interrupted by development hot reload. **There is no valid uninterrupted 30-minute playback pass in this release record.** The 49-minute generated archive is not a substitute for that test. Native WebView2 playback acceptance remains open.
+
 ## Download sizes
 
 | Artifact | Bytes |

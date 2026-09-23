@@ -43,12 +43,11 @@ export default function App() {
   const [stalls, setStalls] = useState(0);
   const playingRef = useRef("");
   const savedAt = useRef(0);
-  const stateRef = useRef<State | undefined>(undefined);
+  const positions = useRef<Record<string, number>>({});
   const autoPlay = useRef("");
   const player = useRef<Player | undefined>(undefined);
   const refresh = useCallback(async () => {
     const next = await request<State>("state");
-    stateRef.current = next;
     setState(next);
     return next;
   }, []);
@@ -82,8 +81,13 @@ export default function App() {
     };
   }, [refresh, fail]);
   useEffect(() => {
-    if (!state?.jobs.some(busy) && !state?.setup?.running) return;
-    const timer = setTimeout(() => void refresh().catch(fail), 700);
+    const working = state?.jobs.some(busy) || state?.setup?.running;
+    if (!working && !state?.engine) return;
+    // An unloaded, idle app does not poll; a retained model needs only a slow refresh.
+    const timer = setTimeout(
+      () => void refresh().catch(fail),
+      working ? 700 : 30000,
+    );
     return () => clearTimeout(timer);
   }, [state, refresh, fail]);
   useEffect(() => {
@@ -110,6 +114,7 @@ export default function App() {
       if (finished) setPaused(true);
       if (Date.now() - savedAt.current > 3000 || finished) {
         savedAt.current = Date.now();
+        if (playingRef.current) positions.current[playingRef.current] = seconds;
         if (playingRef.current)
           void request("played", {
             id: playingRef.current,
@@ -122,7 +127,10 @@ export default function App() {
       void player.current?.close();
     };
   }, [fail]);
-  const start = async (job: Job, seconds = job.played || 0) => {
+  const start = async (
+    job: Job,
+    seconds = positions.current[job.id] ?? job.played ?? 0,
+  ) => {
     try {
       playingRef.current = job.id;
       setPlaying(job.id);

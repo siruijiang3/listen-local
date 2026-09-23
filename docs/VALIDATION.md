@@ -1,4 +1,4 @@
-# Validation — 0.1.0 preview
+# Validation — 0.1.x preview
 
 Measured on 2026-09-23, Windows 11 x64, Intel i9-13900HX, NVIDIA RTX 4060 Laptop 8 GB. Runtime: Python 3.12, Torch 2.6.0, Faster Qwen3-TTS 0.4.0, Qwen-TTS-HF 0.1.1.post1. Model: pinned 0.6B CustomVoice revision in the model manifest. Original benchmark texts and raw timings are under `measurements/`.
 
@@ -30,6 +30,12 @@ The NSIS installer completed with exit code 0 in an isolated directory on the de
 An empty installed app with no model used **464,338,944 bytes** total working set across Tauri, WebView2, the packaged core and console helper at one idle sample. Summing working sets can count shared pages multiple times. This is not private memory or a long-duration leak test.
 
 Additional CPU 4/8-thread measurements are in `measurements/cpu-threads*.json`. Eight threads were faster across this small sample in aggregate (voice RTFs 4.118 / 3.460 / 3.577). The UI supports selecting eight; the general default remains a conservative six pending representative long-text tuning across CPUs. The 8-thread worker reached **5,884,964,864 bytes peak working set**, excluding UI/core. Samples are too small to establish a universal optimum.
+
+The installed core also completed a fresh network download of the published CPU pack and all fixed official model files, including SHA-256 checks and extraction, in **115.42 s** on this connection. Generating and exporting from those downloaded files passed a subsequent standalone smoke test. Network speed is not a hardware performance guarantee.
+
+The standalone CUDA pack passed all three voices. Its first prepare in a new extracted environment took **101.58 s**; the immediate repeat took **7.77 s**. The reason for this first-use difference was not isolated. Do not assume the short warm preparation time is a cold-start guarantee. GPU worker peak working set was about **2.62 GB**; this is host RAM, not VRAM.
+
+The first public Windows CI run passed: https://github.com/siruijiang3/listen-local/actions/runs/35933797460 .
 
 ## Download sizes
 

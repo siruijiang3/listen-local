@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "seconds": 115.42200000002049,
+  "runtime": "cpu",
+  "freshDownloads": true,
+  "modelSource": "fixed official Hugging Face revision",
+  "host": "development Windows PC; not clean-machine acceptance"
+}

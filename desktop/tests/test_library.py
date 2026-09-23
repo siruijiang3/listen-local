@@ -73,6 +73,26 @@ class LibraryTests(unittest.TestCase):
         path.write_bytes('你好，世界。'.encode('gb18030'))
         self.assertEqual(import_book(path)['chapters'][0]['text'], '你好，世界。')
 
+    def test_pdf_text_pages_and_scanned_page_warning(self):
+        from pypdf import PdfWriter
+        from pypdf.generic import DictionaryObject, NameObject, DecodedStreamObject
+        writer = PdfWriter()
+        page = writer.add_blank_page(width=612, height=792)
+        font = DictionaryObject({NameObject('/Type'): NameObject('/Font'),
+                                 NameObject('/Subtype'): NameObject('/Type1'),
+                                 NameObject('/BaseFont'): NameObject('/Helvetica')})
+        page[NameObject('/Resources')] = DictionaryObject({NameObject('/Font'): DictionaryObject({NameObject('/F1'): font})})
+        content = DecodedStreamObject()
+        content.set_data(b'BT /F1 12 Tf 72 720 Td (A complete PDF sentence.) Tj ET')
+        page[NameObject('/Contents')] = writer._add_object(content)
+        writer.add_blank_page(width=612, height=792)
+        path = self.root / 'text.pdf'
+        writer.write(path)
+        book = import_book(path)
+        self.assertEqual(len(book['chapters']), 1)
+        self.assertIn('A complete PDF sentence.', book['chapters'][0]['text'])
+        self.assertIn('2', book['warnings'][0])
+
     def test_zip_path_traversal(self):
         path = self.root / 'bad.zip'
         with zipfile.ZipFile(path, 'w') as z:

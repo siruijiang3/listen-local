@@ -2,7 +2,7 @@
 
 轻量 Windows 本地有声书客户端。React + Tauri 2 提供界面，独立 Python/PyTorch 进程使用 Qwen3-TTS 0.6B 生成语音。无需账户或云推理。
 
-**0.1.0 为预览版。** 已完成本机 GPU/CPU 推理与安装包构建；手机实机、全新 Windows 和全部性能验收仍有未完成项目，详见 [验证记录](docs/VALIDATION.md)。
+**0.1.1 为预览版。** 已完成本机 GPU/CPU 推理与安装包构建；手机实机、全新 Windows 和全部性能验收仍有未完成项目，详见 [验证记录](docs/VALIDATION.md)。
 
 ## 下载与使用
 

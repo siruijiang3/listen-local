@@ -1,0 +1,29 @@
+{
+  "unauthenticatedStatus": 403,
+  "status": "done",
+  "device": "cpu",
+  "audioSeconds": 4.4,
+  "wallSeconds": 35.42200000002049,
+  "generationSeconds": 16.86411219998263,
+  "exports": [
+    {
+      "name": "Packaged CPU validation.m4b",
+      "bytes": 56998
+    },
+    {
+      "name": "0001 First.mp3",
+      "bytes": 38444
+    },
+    {
+      "name": "0002 Last.mp3",
+      "bytes": 34604
+    },
+    {
+      "name": "Packaged CPU validation \u5206\u7ae0.zip",
+      "bytes": 73441
+    }
+  ],
+  "shareRange": 206,
+  "explicitModelRelease": true,
+  "exitCode": 0
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "Listen Local",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "identifier": "org.listenlocal.desktop",
   "build": {
     "beforeDevCommand": "npm run dev",
@@ -10,14 +10,43 @@
     "frontendDist": "../dist-desktop"
   },
   "app": {
-    "windows": [{"title": "听见 · 本地有声书", "width": 1180, "height": 820, "minWidth": 860, "minHeight": 620}],
-    "security": {"csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ipc: http://ipc.localhost http://127.0.0.1:*; media-src 'self' blob:; worker-src 'self' blob:"}
+    "windows": [
+      {
+        "title": "听见 · 本地有声书",
+        "width": 1180,
+        "height": 820,
+        "minWidth": 860,
+        "minHeight": 620
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src ipc: http://ipc.localhost http://127.0.0.1:*; media-src 'self' blob:; worker-src 'self' blob:"
+    }
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis"],
-    "icon": ["icons/icon.ico", "icons/32x32.png", "icons/128x128.png"],
-    "resources": ["binaries/listen-core.exe"],
-    "windows": {"webviewInstallMode": {"type": "downloadBootstrapper"}, "nsis": {"installMode": "currentUser", "languages": ["SimpChinese", "English"]}}
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico",
+      "icons/32x32.png",
+      "icons/128x128.png"
+    ],
+    "resources": [
+      "binaries/listen-core.exe"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper"
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "SimpChinese",
+          "English"
+        ]
+      }
+    }
   }
 }

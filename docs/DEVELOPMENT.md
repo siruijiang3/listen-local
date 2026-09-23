@@ -49,3 +49,9 @@ Benchmarks write original PCM and measured records under the requested output di
 ## Contributions
 
 Keep changes focused. Prefer a small function or module to a new framework. Test durable state transitions, protocol boundaries and format handling; do not add heavyweight runtime dependencies to the UI or core. Retain source notices and keep private books, model weights, binaries, environments and generated audio out of Git.
+
+## Installed-package checks
+
+`scripts/smoke-packaged-core.py --core <installed-listen-core.exe> --home <test-directory> --runtime <runtime-python.exe> --model <model-directory>` runs an actual two-chapter CPU job, export, download and clean shutdown with development Python removed from the child PATH.
+
+`scripts/check-packaged-recovery.py` takes the same arguments. It requests shutdown during a real CPU job, restarts the core, resumes and verifies hashes of completed segments are unchanged. Always use an isolated test directory.

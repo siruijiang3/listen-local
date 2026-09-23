@@ -19,6 +19,7 @@ parser.add_argument('--device', choices=['cpu','gpu'], required=True)
 parser.add_argument('--threads', type=int, default=6)
 parser.add_argument('--repeats', type=int, default=20)
 parser.add_argument('--output', required=True, type=Path)
+parser.add_argument('--measure-cuda-memory', action='store_true')
 args = parser.parse_args()
 args.output.parent.mkdir(parents=True, exist_ok=True)
 samples = {
@@ -26,7 +27,16 @@ samples = {
     'English': ['The rain stopped before sunrise.', 'She opened the window and listened to the quiet garden.', 'This is a local audiobook test. Every sentence should be preserved, including the ending.', '“Where shall we go today?” he asked. “Let us walk along the river,” she replied.', 'Night settled over the little town. A light in the distance was still shining, waiting for someone to come home.'],
 }
 log = args.output.with_suffix('.log').open('w', encoding='utf-8')
-process = subprocess.Popen([args.python, '-u', str(ROOT / 'desktop/backend/engine_worker.py')], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+worker_command = [args.python, '-u', str(ROOT / 'desktop/backend/engine_worker.py')]
+if args.measure_cuda_memory:
+    wrapper = '''import atexit,json,pathlib,runpy,sys,torch
+def save():
+    pathlib.Path(sys.argv[2]).write_text(json.dumps({'maxAllocated':torch.cuda.max_memory_allocated(),'maxReserved':torch.cuda.max_memory_reserved()},indent=2))
+atexit.register(save)
+runpy.run_path(sys.argv[1],run_name='__main__')
+'''
+    worker_command = [args.python, '-u', '-c', wrapper, str(ROOT / 'desktop/backend/engine_worker.py'), str(args.output.with_suffix('.cuda.json'))]
+process = subprocess.Popen(worker_command, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                            stderr=log, text=True, encoding='utf-8', creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
 
 def command(data):

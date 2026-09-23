@@ -160,7 +160,10 @@ class Service:
                     export_job(self.library, job['id'])
             except Exception as error:
                 self.library.execute("UPDATE segments SET status='pending',samples=0 WHERE job_id=? AND status='running'", (job['id'],))
-                self.library.execute("UPDATE jobs SET status='failed',error=? WHERE id=?", (str(error), job['id']))
+                interrupted = self.stopping.is_set()
+                self.library.execute("UPDATE jobs SET status=?,error=? WHERE id=?",
+                    ('paused' if interrupted else 'failed',
+                     '退出时保存，未完成段将在恢复时重做。' if interrupted else str(error), job['id']))
                 self.stop_engine()
             finally:
                 self.last_use = time.monotonic()
@@ -317,7 +320,11 @@ class Service:
         # Graceful segment-boundary shutdown; the launcher has an upper time bound.
         self.scheduler.join(timeout=5)
         abort_exports()
-        if self.scheduler.is_alive() and self.engine:
-            self.engine.kill()
+        engine = self.engine
+        if self.scheduler.is_alive() and engine:
+            try:
+                engine.kill()
+            except OSError:
+                pass  # The scheduler may have already finished the worker.
             self.scheduler.join(timeout=5)
         self.library.execute("UPDATE jobs SET status='paused',error='退出时保存，未完成段将在恢复时重做。' WHERE status IN ('queued','preparing','running','exporting')")

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "checks": [
+    "Pending text does not interrupt live playback",
+    "Growing audio does not change an active drag range or preview",
+    "Pausing playback preserves its position while synthesis continues",
+    "All newly completed natural paragraphs become clickable with matching audio starts"
+  ],
+  "audioSeconds": 66.96,
+  "generationSeconds": 29.006988300010562,
+  "device": "cuda",
+  "errors": []
+}

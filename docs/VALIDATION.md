@@ -12,6 +12,8 @@ The packaged 0.1.2 core generated three distinct paragraphs for each of Serena, 
 
 Native reader interaction and continuous-playback results are recorded separately below when the final run finishes; interrupted development runs are not counted as 30-minute passes.
 
+A separate headless Edge functional test exercised the React reader against the real packaged CUDA core while four different natural paragraphs were being generated. It verified pending-text clicks, frozen drag range during growth, synthesis continuing while playback was paused, and all four newly completed paragraphs becoming clickable at their measured sample starts. The job produced 66.96 seconds of audio in 29.007 seconds of generation with no JavaScript errors. This is functional browser evidence, distinct from the native WebView2 continuous-playback run. See `measurements/live-reader-0.1.2.json` and `scripts/check-reader-live.cjs`.
+
 ## Native engine measurements
 
 | Voice | GPU warm first-block P95 (20 samples) | GPU aggregate RTF | CPU RTF (one short sample, 6 threads) |

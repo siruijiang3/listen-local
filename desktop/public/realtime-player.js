@@ -23,6 +23,7 @@ class RealtimePlayer extends AudioWorkletProcessor {
   process(_, outputs) {
     const out=outputs[0][0]; out.fill(0);
     if(!this.paused && !this.finished) {
+      if(this.ended && !this.available) {this.finished=true;this.port.postMessage({type:"finished",runId:this.runId});}
       if(!this.started && (this.available >= 12000 || (this.ended && this.available))) this.started=true;
       if(this.started) for(let i=0;i<out.length;i++) {
         if(this.available < 1) {

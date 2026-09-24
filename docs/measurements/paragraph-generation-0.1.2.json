@@ -1,0 +1,114 @@
+{
+  "voices": [
+    {
+      "speaker": "Serena",
+      "device": "cuda",
+      "paragraphs": [
+        "清晨，林岚推开窗，看见街边的梧桐树。",
+        "她把书放进背包，沿着河岸走向图书馆。",
+        "傍晚归来时，桌上的茶已经凉了。"
+      ],
+      "audioSeconds": 11.92,
+      "generationSeconds": 5.096976700122468,
+      "wallSeconds": 15.905999999959022,
+      "partialIndexObserved": true,
+      "segments": [
+        {
+          "position": 0,
+          "start": 0,
+          "end": 20,
+          "sampleStart": 0,
+          "sampleEnd": 107520
+        },
+        {
+          "position": 1,
+          "start": 20,
+          "end": 40,
+          "sampleStart": 107520,
+          "sampleEnd": 201600
+        },
+        {
+          "position": 2,
+          "start": 40,
+          "end": 55,
+          "sampleStart": 201600,
+          "sampleEnd": 286080
+        }
+      ]
+    },
+    {
+      "speaker": "Uncle_Fu",
+      "device": "cuda",
+      "paragraphs": [
+        "清晨，林岚推开窗，看见街边的梧桐树。",
+        "她把书放进背包，沿着河岸走向图书馆。",
+        "傍晚归来时，桌上的茶已经凉了。"
+      ],
+      "audioSeconds": 15.6,
+      "generationSeconds": 6.61710870009847,
+      "wallSeconds": 7.23499999998603,
+      "partialIndexObserved": true,
+      "segments": [
+        {
+          "position": 0,
+          "start": 0,
+          "end": 20,
+          "sampleStart": 0,
+          "sampleEnd": 144000
+        },
+        {
+          "position": 1,
+          "start": 20,
+          "end": 40,
+          "sampleStart": 144000,
+          "sampleEnd": 266880
+        },
+        {
+          "position": 2,
+          "start": 40,
+          "end": 55,
+          "sampleStart": 266880,
+          "sampleEnd": 374400
+        }
+      ]
+    },
+    {
+      "speaker": "Aiden",
+      "device": "cuda",
+      "paragraphs": [
+        "At sunrise, Mara opened the window and listened to the birds.",
+        "She put a book in her bag and walked to the library.",
+        "When she came home that evening, the tea on her desk was cold."
+      ],
+      "audioSeconds": 10.96,
+      "generationSeconds": 4.675882099778391,
+      "wallSeconds": 5.812000000034459,
+      "partialIndexObserved": true,
+      "segments": [
+        {
+          "position": 0,
+          "start": 0,
+          "end": 63,
+          "sampleStart": 0,
+          "sampleEnd": 99840
+        },
+        {
+          "position": 1,
+          "start": 63,
+          "end": 117,
+          "sampleStart": 99840,
+          "sampleEnd": 167040
+        },
+        {
+          "position": 2,
+          "start": 117,
+          "end": 179,
+          "sampleStart": 167040,
+          "sampleEnd": 263040
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "exitCode": 0
+}

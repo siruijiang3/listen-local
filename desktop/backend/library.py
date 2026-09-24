@@ -72,6 +72,7 @@ class Library:
         book = self.one('SELECT * FROM books WHERE id=?', (book_id,))
         job_id, language = uid(), VOICES[speaker]
         settings = {'model': 'Qwen/Qwen3-TTS-12Hz-0.6B-CustomVoice', 'revision': REVISION,
+                    'segmentation': 'paragraph-v1',
                     'frames': 8, 'temperature': 0.9, 'top_k': 50, 'top_p': 1, 'repetition_penalty': 1.05,
                     'sourceHash': hashlib.sha256(book['chapters'].encode()).hexdigest()}
         with self.lock:
@@ -104,8 +105,52 @@ class Library:
           (SELECT COALESCE(SUM(samples),0) FROM segments s WHERE s.job_id=j.id) samples
           FROM jobs j JOIN books b ON j.book_id=b.id ORDER BY j.created DESC''')
         for job in jobs:
+            # The player must not advertise audio after a pending/failed gap.
+            job['samples'] = 0
+            for segment in self.rows('SELECT status,samples FROM segments WHERE job_id=? ORDER BY position', (job['id'],)):
+                if segment['status'] not in ('done', 'running'):
+                    break
+                job['samples'] += segment['samples']
             job['exports'] = self.rows('SELECT id,name,bytes,sha256 FROM exports WHERE job_id=?', (job['id'],))
         return {'books': books, 'jobs': jobs}
+
+    def reader(self, job_id, chapter=None, start=None, limit=None):
+        """A source-version index. Ranges are UTF-16; time ranges are PCM samples.
+
+        Full metadata is fetched once. Subsequent requests fetch only changed
+        segments; chapter text is loaded separately and never polled.
+        """
+        job = self.one('SELECT book_id FROM jobs WHERE id=?', (job_id,))
+        if chapter is not None:
+            book = self.one('SELECT chapters FROM books WHERE id=?', (job['book_id'],))
+            chapters = json.loads(book['chapters'])
+            if chapter < 0 or chapter >= len(chapters):
+                raise ValueError('章节不存在。')
+            return {'job': job_id, 'chapter': chapter, 'text': chapters[chapter]['text']}
+        if start is not None and (start < 0 or limit is None or not 1 <= limit <= 10000):
+            raise ValueError('无效索引范围。')
+        segments = self.rows('SELECT * FROM segments WHERE job_id=? ORDER BY position', (job_id,))
+        offset, contiguous, text_offset, last_chapter = 0, True, 0, None
+        result = []
+        for segment in segments:
+            if segment['chapter'] != last_chapter:
+                text_offset, last_chapter = 0, segment['chapter']
+            end = text_offset + len(segment['text'].encode('utf-16-le')) // 2
+            contiguous = contiguous and segment['status'] in ('done', 'running')
+            count = segment['samples'] if contiguous else 0
+            if start is None or start <= segment['position'] < start + limit:
+                result.append({'id': segment['id'], 'position': segment['position'], 'chapter': segment['chapter'],
+                               'start': text_offset, 'end': end, 'status': segment['status'],
+                               'sampleStart': offset if contiguous else None,
+                               'sampleEnd': offset + count if contiguous else None})
+            offset += count
+            text_offset = end
+        data = {'job': job_id, 'sampleRate': 24000, 'samples': offset, 'segments': result,
+                'completed': sum(s['status'] == 'done' for s in segments), 'total': len(segments)}
+        if start is None:
+            book = self.one('SELECT title,chapters FROM books WHERE id=?', (job['book_id'],))
+            data.update(title=book['title'], chapters=[{'title': c['title']} for c in json.loads(book['chapters'])])
+        return data
 
     def audio(self, job_id, offset, count):
         if offset < 0 or offset % 2 or count <= 0:

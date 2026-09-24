@@ -42,6 +42,15 @@ class LibraryTests(unittest.TestCase):
         for start, end, part in pieces:
             self.assertEqual(text[start:end], part)
 
+    def test_new_segments_never_cross_paragraphs(self):
+        text = '第一段。\r\n\r\n第二段。\n第三段。\r第四段。\n' + '长' * 400 + '\n  尾声。  '
+        pieces = list(split_text(text, 'Chinese'))
+        self.assertEqual(''.join(part for _, _, part in pieces), text)
+        for start, end, part in pieces:
+            self.assertEqual(text[start:end], part)
+            self.assertLessEqual(len([line for line in part.splitlines() if line.strip()]), 1)
+        self.assertEqual([part for _, _, part in pieces[:4]], ['第一段。\r\n\r\n', '第二段。\n', '第三段。\r', '第四段。\n'])
+
     def test_crash_recovery_keeps_commits_and_discards_partial(self):
         job = self.job()
         segments = self.library.rows('SELECT * FROM segments WHERE job_id=? ORDER BY position', (job,))

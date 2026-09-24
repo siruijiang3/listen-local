@@ -123,7 +123,12 @@ def split_text(text, language):
     start = 0
     while start < len(text):
         end = min(start + limit, len(text))
-        if end < len(text):
+        newline = re.search(r'[\r\n]', text[start:end])
+        if newline:
+            end = start + newline.start()
+            while end < len(text) and text[end] in '\r\n':
+                end += 1
+        elif end < len(text):
             cuts = [m.end() for m in re.finditer(r'[。！？.!?；;\n]+\s*', text[start:end])]
             if cuts:
                 end = start + cuts[-1]

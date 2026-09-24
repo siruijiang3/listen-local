@@ -79,6 +79,11 @@ def main():
                 query = parse_qs(url.query)
                 if url.path == '/v1/state':
                     self.reply(service.state())
+                elif url.path == '/v1/reader':
+                    self.reply(service.library.reader(query['job'][0],
+                        int(query['chapter'][0]) if 'chapter' in query else None,
+                        int(query['from'][0]) if 'from' in query else None,
+                        int(query['limit'][0]) if 'limit' in query else None))
                 elif url.path == '/v1/audio':
                     pcm = service.library.audio(query['job'][0], int(query.get('offset', ['0'])[0]), int(query.get('count', ['48000'])[0]))
                     self.send_response(200)

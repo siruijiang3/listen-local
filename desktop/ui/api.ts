@@ -43,16 +43,43 @@ export async function request<T = unknown>(
   }
   return result.json() as Promise<T>;
 }
-export async function audio(job: string, offset: number, count: number) {
+export async function audio(
+  job: string,
+  offset: number,
+  count: number,
+  signal?: AbortSignal,
+) {
   if (!connection) throw new Error("本地服务尚未连接。");
   const result = await fetch(
     `http://127.0.0.1:${connection.port}/v1/audio?job=${encodeURIComponent(job)}&offset=${offset}&count=${count}`,
     {
+      signal,
       headers: { Authorization: `Bearer ${connection.token}` },
     },
   );
   if (!result.ok) throw new Error("无法读取音频。");
   return result.arrayBuffer();
+}
+
+export interface ReaderSegment {
+  id: string;
+  position: number;
+  chapter: number;
+  start: number;
+  end: number;
+  status: string;
+  sampleStart: number | null;
+  sampleEnd: number | null;
+}
+export interface ReaderIndex {
+  job: string;
+  title: string;
+  chapters: { title: string }[];
+  sampleRate: number;
+  samples: number;
+  completed: number;
+  total: number;
+  segments: ReaderSegment[];
 }
 
 export interface Chapter {

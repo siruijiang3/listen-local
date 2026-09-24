@@ -2,6 +2,16 @@
 
 Measured on 2026-09-23, Windows 11 x64, Intel i9-13900HX, NVIDIA RTX 4060 Laptop 8 GB. Runtime: Python 3.12, Torch 2.6.0, Faster Qwen3-TTS 0.4.0, Qwen-TTS-HF 0.1.1.post1. Model: pinned 0.6B CustomVoice revision in the model manifest. Original benchmark texts and raw timings are under `measurements/`.
 
+## 0.1.2 reader and seek update
+
+The reader uses actual persisted fragment ranges, not estimated word timestamps. Older recordings retain their original segmentation, including fragments spanning natural paragraphs. The UI labels each active fragment with its number, time range and any cross-paragraph span. New jobs stop at CR/LF paragraph boundaries and split long paragraphs with the existing language-specific limits. No existing job is resegmented or regenerated.
+
+Seven frontend tests and seventeen Python tests pass. Added regressions cover delayed AudioContext close/module load races, stale progress and aborted PCM reads, paused seeks and exact endpoints, source/audio interval boundaries, UTF-16 source ranges, zero-length fragments, gaps and shrinking availability, and paragraph source preservation. TypeScript production build and formatting checks pass.
+
+The packaged 0.1.2 core generated three distinct paragraphs for each of Serena, Uncle Fu and Aiden on CUDA. Each produced exactly three completed fragments with matching source/sample ranges; partial reader indices were observed during generation. Audio durations were 11.92 / 15.60 / 10.96 seconds and generation times 5.097 / 6.617 / 4.676 seconds. These are regression samples, not a new statistical latency benchmark. See `measurements/paragraph-generation-0.1.2.json`.
+
+Native reader interaction and continuous-playback results are recorded separately below when the final run finishes; interrupted development runs are not counted as 30-minute passes.
+
 ## Native engine measurements
 
 | Voice | GPU warm first-block P95 (20 samples) | GPU aggregate RTF | CPU RTF (one short sample, 6 threads) |

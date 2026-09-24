@@ -55,3 +55,13 @@ Keep changes focused. Prefer a small function or module to a new framework. Test
 `scripts/smoke-packaged-core.py --core <installed-listen-core.exe> --home <test-directory> --runtime <runtime-python.exe> --model <model-directory>` runs an actual two-chapter CPU job, export, download and clean shutdown with development Python removed from the child PATH.
 
 `scripts/check-packaged-recovery.py` takes the same arguments. It requests shutdown during a real CPU job, restarts the core, resumes and verifies hashes of completed segments are unchanged. Always use an isolated test directory.
+
+## Reader and seek validation
+
+`scripts/check-paragraph-generation.py` takes `--core`, `--home`, `--runtime` and `--model`. It generates three distinct paragraphs in each supported voice on CUDA, verifies the actual reader index (including partial availability) and checks reader authentication. Results contain original texts, durations and sample ranges, not user books.
+
+For native UI validation, install Playwright in a separate validation environment and expose it through `NODE_PATH`. Launch a copy of the packaged app with `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS=--remote-debugging-port=9224 --remote-debugging-address=127.0.0.1`. Do not set this globally or ship it in the installer. Start with no active generation tasks. Copy a validation library containing a recording longer than 40 minutes; optionally add cross-chapter and pending-audio fixtures with `scripts/prepare-reader-fixtures.py --isolated-library <copy>`.
+
+Run `node scripts/check-reader-playback.cjs http://127.0.0.1:9224 <copied-library> <output-directory> 30`. It checks pause/seek, dragging and cancel, source clicks, free browsing, cross-chapter mapping, pending audio, saved positions and bounded text rendering, then plays continuously for 30 minutes. The harness temporarily switches the library through the app API and restores the original settings in `finally`; the original settings backup is in its output directory. If the harness is forcibly killed, restore that backup before reopening normal use. Create an empty `STOP` file in its output directory to request a controlled stop at the next 30-second checkpoint. Close the validation app afterward so its debugging port is not left running.
+
+The harness injects measurement listeners through CDP, not production code. Its AudioWorklet progress and underrun counts verify the native playback pipeline; they do not measure acoustic latency or replace human assessment of narration quality. Additional phone and clean-machine acceptance remains separate.

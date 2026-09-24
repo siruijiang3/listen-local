@@ -18,6 +18,7 @@ The core announces `{protocol, port, token}` once on stdout. Tauri exposes this 
 - `POST /v1/import`, `/save_book`, `/book`: import preview and immutable source revisions.
 - `POST /v1/generate`, `/pause`, `/resume`, `/cancel`, `/played`: task and playback controls.
 - `GET /v1/audio?job=...&offset=...&count=...`: bounded PCM16 little-endian data, 24 kHz mono. Offset/count are bytes; offsets must align to a sample.
+- `GET /v1/reader?job=...`: chapter titles and source/audio fragment index. `&chapter=N` reads only that chapter's original text; `&from=N&limit=M` refreshes a slice of the index without resending chapter text. Source ranges use UTF-16 code units (end exclusive), audio ranges use integer 24 kHz samples. Unavailable ranges are null; empty audio ranges cannot be played.
 - `POST /v1/settings`, `/install`, `/release`: library/runtime settings and pinned downloads.
 - `POST /v1/copy_export`, `/share`, `/unshare`: completed artifacts only.
 - `POST /v1/shutdown`: application-owned service shutdown.
@@ -30,7 +31,13 @@ SQLite schema version 1 contains books, jobs, segments and exports. Source offse
 
 All audio stays in files. AudioWorklet has a 32-second ring and the existing 0.5-second start threshold; the UI feeds less than 24 seconds ahead. The core never waits for playback credit. Live playback is an optional consumer of the same archived PCM used for export.
 
+The reader reuses persisted generation fragments, including recordings created before 0.1.2. It does not infer word or sentence timestamps. Audio seeks use a binary search over nonempty half-open sample intervals; an exact boundary selects the next fragment and the recording endpoint retains the last highlight. Source revisions are immutable. The reader caches at most three chapters of text and renders a window of 60 fragments with previous/next controls; the timing index is independent of the text cache. Generation refreshes update only changed index slices. No idle reader polling is added.
+
+Seeking separates the drag preview from actual playback. The drag freezes its time range and initial pause state; committing performs one new player session. A monotonic session number invalidates old asynchronous work and AbortController cancels old PCM requests. Context cleanup detaches references before awaiting close, so an old session cannot tear down a new one. Playback position writes are serialized on seek, pause, switch and close in addition to periodic progress writes. A shrinking readable range discards queued audio and pauses at a valid position.
+
 M4B and MP3 are encoded through FFmpeg pipes; the whole book is never assembled as a JS array or Python bytes object. Export metadata becomes visible only after every artifact is finalized and hashed. Interrupted exports can be retried without regenerating completed speech.
+
+New jobs record `segmentation: paragraph-v1`: a CR/LF paragraph boundary ends a generation fragment, and long paragraphs retain the existing language-specific size limits. No characters are rewritten or dropped. Existing jobs keep their original fragment rows and PCM; the reader explicitly labels fragments that span more than one nonblank source line. PDF extraction line breaks are respected as supplied; paragraph reconstruction/OCR is not introduced.
 
 ## LAN sharing
 

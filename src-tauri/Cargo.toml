@@ -1,6 +1,6 @@
 [package]
 name = "listen-local"
-version = "0.1.1"
+version = "0.1.2"
 description = "Offline audiobook generation and listening"
 authors = ["Listen Local contributors"]
 license = "GPL-3.0-or-later"

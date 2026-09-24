@@ -9,6 +9,9 @@ import {
   type Settings,
 } from "./api";
 import { Player } from "./player";
+import { Reader } from "./Reader";
+import { SeekBar } from "./SeekBar";
+import { useReaderIndex } from "./reading-index";
 
 const labels: Record<string, string> = {
   queued: "等待生成",
@@ -29,7 +32,7 @@ export default function App() {
   const [state, setState] = useState<State>();
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
-  const [tab, setTab] = useState<"library" | "tasks">("library");
+  const [tab, setTab] = useState<"library" | "tasks" | "reader">("library");
   const [selected, setSelected] = useState("");
   const [draft, setDraft] = useState<{ title: string; chapters: Chapter[] }>();
   const [chapter, setChapter] = useState(0);
@@ -40,6 +43,10 @@ export default function App() {
   const [playing, setPlaying] = useState("");
   const [paused, setPaused] = useState(false);
   const [position, setPosition] = useState(0);
+  const positionRef = useRef(0);
+  const [preview, setPreview] = useState<number | null>(null);
+  const [followToken, setFollowToken] = useState(0);
+  const saveQueue = useRef(Promise.resolve());
   const [stalls, setStalls] = useState(0);
   const playingRef = useRef("");
   const savedAt = useRef(0);
@@ -55,6 +62,17 @@ export default function App() {
     (reason: unknown) =>
       setError(String(reason instanceof Error ? reason.message : reason)),
     [],
+  );
+  const savePosition = useCallback(
+    (id: string, seconds: number) => {
+      if (!id) return;
+      positions.current[id] = seconds;
+      const metrics = { ...player.current?.metrics };
+      saveQueue.current = saveQueue.current
+        .then(() => request("played", { id, seconds, metrics }))
+        .then(() => {}, fail);
+    },
+    [fail],
   );
   const act = async <T,>(
     action: string,
@@ -108,40 +126,49 @@ export default function App() {
     state?.settings.model,
   ]);
   useEffect(() => {
-    player.current = new Player((seconds, count, finished) => {
-      setPosition(seconds);
-      setStalls(count);
-      if (finished) setPaused(true);
-      if (Date.now() - savedAt.current > 3000 || finished) {
-        savedAt.current = Date.now();
-        if (playingRef.current) positions.current[playingRef.current] = seconds;
-        if (playingRef.current)
-          void request("played", {
-            id: playingRef.current,
-            seconds,
-            metrics: player.current?.metrics,
-          }).catch(fail);
-      }
-    }, fail);
+    player.current = new Player(
+      (seconds, count, finished) => {
+        positionRef.current = seconds;
+        setPosition(seconds);
+        setStalls(count);
+        if (finished) setPaused(true);
+        if (Date.now() - savedAt.current > 3000 || finished) {
+          savedAt.current = Date.now();
+          savePosition(playingRef.current, seconds);
+        }
+      },
+      (reason) => {
+        setPaused(true);
+        fail(reason);
+      },
+    );
     return () => {
       void player.current?.close();
     };
-  }, [fail]);
+  }, [fail, savePosition]);
   const start = async (
     job: Job,
-    seconds = positions.current[job.id] ?? job.played ?? 0,
+    seconds = playingRef.current === job.id
+      ? positionRef.current
+      : (positions.current[job.id] ?? job.played ?? 0),
+    keepPaused = false,
   ) => {
     try {
+      savePosition(playingRef.current, positionRef.current);
+      seconds = Math.max(0, Math.min(seconds, job.samples / 24000));
       playingRef.current = job.id;
       setPlaying(job.id);
+      setTab("reader");
+      setPreview(null);
+      setFollowToken((token) => token + 1);
+      positionRef.current = seconds;
       setPosition(seconds);
-      setPaused(false);
+      setPaused(keepPaused);
       setStalls(0);
       player.current?.update(job.samples, job.completed === job.total);
-      await player.current?.start(
-        job.id,
-        Math.min(seconds, Math.max(0, job.samples / 24000 - 0.1)),
-      );
+      await player.current?.start(job.id, seconds, keepPaused);
+      if (playingRef.current === job.id)
+        savePosition(job.id, positionRef.current);
     } catch (reason) {
       fail(reason);
     }
@@ -207,6 +234,27 @@ export default function App() {
     }
   };
   const playingJob = state?.jobs.find((j) => j.id === playing);
+  const readerIndex = useReaderIndex(playingJob, fail);
+  const lastAvailable = useRef({ job: "", samples: 0 });
+  useEffect(() => {
+    if (playingJob) {
+      if (
+        (lastAvailable.current.job === playingJob.id &&
+          playingJob.samples < lastAvailable.current.samples) ||
+        positionRef.current > playingJob.samples / 24000
+      ) {
+        void start(
+          playingJob,
+          Math.min(positionRef.current, playingJob.samples / 24000),
+          true,
+        );
+      }
+      lastAvailable.current = {
+        job: playingJob.id,
+        samples: playingJob.samples,
+      };
+    }
+  }, [playingJob?.id, playingJob?.samples]);
   const activeCount = state?.jobs.filter(busy).length || 0;
   const selectedBook = state?.books.find((b) => b.id === selected);
   const chooseSetting = async (
@@ -250,6 +298,14 @@ export default function App() {
             ≋　生成任务 <span>{activeCount}</span>
           </button>
         </nav>
+        {playingJob && (
+          <button
+            className={tab === "reader" ? "active" : ""}
+            onClick={() => setTab("reader")}
+          >
+            ▣　阅读与收听
+          </button>
+        )}
         <div className="rail-bottom">
           <span className="local-dot" /> 本地生成，安心收听
           <p>
@@ -262,17 +318,23 @@ export default function App() {
           </button>
         </div>
       </aside>
-      <main>
-        <header>
+      <main className={tab === "reader" ? "reading-main" : ""}>
+        <header hidden={tab === "reader"}>
           <div>
             <p className="eyebrow">让阅读，有另一种方式</p>
             <h1>
-              {tab === "library" ? "把好书，留给耳朵。" : "声音正在成形。"}
+              {tab === "library"
+                ? "把好书，留给耳朵。"
+                : tab === "reader"
+                  ? "边听，边读。"
+                  : "声音正在成形。"}
             </h1>
             <p className="muted">
               {tab === "library"
                 ? "导入一本书，在电脑上生成，带到任何地方听。"
-                : "生成与收听彼此独立。暂停播放，也不耽误后面的内容。"}
+                : tab === "reader"
+                  ? "原文与音频，随时双向定位。"
+                  : "生成与收听彼此独立。暂停播放，也不耽误后面的内容。"}
             </p>
           </div>
           <button className="primary" onClick={importFile}>
@@ -559,6 +621,28 @@ export default function App() {
             ))}
           </section>
         )}
+        {readerIndex && playingJob && (
+          <Reader
+            key={playingJob.id}
+            index={readerIndex}
+            position={position}
+            preview={preview}
+            followToken={followToken}
+            visible={tab === "reader"}
+            fail={fail}
+            play={(segment) => {
+              if (
+                segment.sampleStart === null ||
+                segment.sampleEnd! <= segment.sampleStart
+              ) {
+                setNotice("这部分尚未生成，当前播放不变。");
+                return;
+              }
+              void start(playingJob, segment.sampleStart / 24000);
+            }}
+          />
+        )}
+        {tab === "reader" && !readerIndex && <p>正在加载原文索引…</p>}
       </main>
       {playingJob && (
         <footer className="player">
@@ -573,40 +657,44 @@ export default function App() {
             className="play-toggle"
             aria-label={paused ? "继续播放" : "暂停播放"}
             onClick={() => {
-              if (paused && position >= playingJob.samples / 24000 - 0.2) {
+              if (
+                paused &&
+                playingJob.completed === playingJob.total &&
+                position >= playingJob.samples / 24000
+              ) {
                 void start(playingJob, 0);
               } else {
                 player.current?.pause(playing, !paused);
                 setPaused(!paused);
+                savePosition(playing, positionRef.current);
               }
             }}
           >
             {paused ? "▶" : "Ⅱ"}
           </button>
-          <span>{time(position)}</span>
-          <input
-            aria-label="播放位置"
-            type="range"
-            min="0"
-            max={Math.max(1, playingJob.samples / 24000)}
-            step="1"
-            value={position}
-            onChange={(e) => {
-              setPosition(Number(e.target.value));
-            }}
-            onPointerUp={(e) =>
-              void start(playingJob, Number(e.currentTarget.value))
-            }
-            onKeyUp={(e) =>
-              void start(playingJob, Number(e.currentTarget.value))
+          <span>{time(preview ?? position)}</span>
+          <SeekBar
+            key={playingJob.id}
+            position={position}
+            duration={playingJob.samples / 24000}
+            paused={paused}
+            preview={setPreview}
+            seek={(seconds, keepPaused) =>
+              void start(playingJob, seconds, keepPaused)
             }
           />
-          <span>{time(playingJob.samples / 24000)}</span>
+          <span>
+            {playingJob.completed !== playingJob.total ? "已生成 " : ""}
+            {time(playingJob.samples / 24000)}
+          </span>
           <button
             onClick={() => {
+              savePosition(playing, positionRef.current);
               void player.current?.close();
               setPlaying("");
               playingRef.current = "";
+              setPreview(null);
+              if (tab === "reader") setTab("tasks");
             }}
           >
             关闭

@@ -1,0 +1,1035 @@
+{
+  "started": "2026-09-24T01:11:23.877Z",
+  "checks": [
+    {
+      "name": "paused keyboard seek",
+      "detail": {
+        "pausedAt": 10.53
+      }
+    },
+    {
+      "name": "drag holds preview and commits outside slider",
+      "detail": {
+        "held": 1002.17
+      }
+    },
+    {
+      "name": "text to audio mapping",
+      "detail": {
+        "segment": 2,
+        "start": 88.24
+      }
+    },
+    {
+      "name": "manual browsing and return to narration",
+      "detail": {}
+    },
+    {
+      "name": "cancel preview while playing",
+      "detail": {}
+    },
+    {
+      "name": "playing mouse seek",
+      "detail": {
+        "playingAt": 316.19
+      }
+    },
+    {
+      "name": "bounded long chapter window",
+      "detail": {}
+    },
+    {
+      "name": "text selection does not seek",
+      "detail": {}
+    },
+    {
+      "name": "playback continues away from reader",
+      "detail": {}
+    },
+    {
+      "name": "pending text leaves playback and generation unchanged",
+      "detail": {}
+    },
+    {
+      "name": "audio seek crosses chapter and selects source",
+      "detail": {}
+    },
+    {
+      "name": "text click switches back across chapters",
+      "detail": {}
+    },
+    {
+      "name": "close and reopen preserves position",
+      "detail": {}
+    },
+    {
+      "name": "exact ending and explicit replay",
+      "detail": {}
+    }
+  ],
+  "samples": [
+    {
+      "wallSeconds": 30.017,
+      "position": 30.61,
+      "segment": "0",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 30.613333333333333,
+          "bufferSeconds": 25.386666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 60.033,
+      "position": 60.64,
+      "segment": "1",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 60.64,
+          "bufferSeconds": 25.36,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 90.047,
+      "position": 90.67,
+      "segment": "2",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 90.66666666666667,
+          "bufferSeconds": 25.333333333333332,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 120.058,
+      "position": 120.64,
+      "segment": "2",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 120.64,
+          "bufferSeconds": 25.36,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 150.076,
+      "position": 150.67,
+      "segment": "3",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 150.66666666666666,
+          "bufferSeconds": 25.333333333333332,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 180.098,
+      "position": 180.69,
+      "segment": "4",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 180.69333333333333,
+          "bufferSeconds": 25.30666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 210.112,
+      "position": 210.72,
+      "segment": "5",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 210.72,
+          "bufferSeconds": 25.28,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 240.128,
+      "position": 240.75,
+      "segment": "5",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 240.69333333333333,
+          "bufferSeconds": 25.30666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 270.135,
+      "position": 270.72,
+      "segment": "6",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 270.72,
+          "bufferSeconds": 25.28,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 300.152,
+      "position": 300.75,
+      "segment": "7",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 300.74666666666667,
+          "bufferSeconds": 25.253333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 330.158,
+      "position": 330.77,
+      "segment": "8",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 330.7733333333333,
+          "bufferSeconds": 25.226666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 360.165,
+      "position": 360.75,
+      "segment": "8",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 360.74666666666667,
+          "bufferSeconds": 25.253333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 390.182,
+      "position": 390.77,
+      "segment": "9",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 390.7733333333333,
+          "bufferSeconds": 25.226666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 420.198,
+      "position": 420.8,
+      "segment": "10",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 420.8,
+          "bufferSeconds": 25.2,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 450.218,
+      "position": 450.83,
+      "segment": "11",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 450.82666666666665,
+          "bufferSeconds": 25.173333333333332,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 480.24,
+      "position": 480.85,
+      "segment": "11",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 480.85333333333335,
+          "bufferSeconds": 25.14666666666667,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 510.262,
+      "position": 510.88,
+      "segment": "12",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 510.88,
+          "bufferSeconds": 25.12,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 540.281,
+      "position": 540.91,
+      "segment": "13",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 540.9066666666666,
+          "bufferSeconds": 25.093333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 570.29,
+      "position": 570.88,
+      "segment": "14",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 570.88,
+          "bufferSeconds": 25.12,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 600.307,
+      "position": 600.91,
+      "segment": "14",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 600.9066666666666,
+          "bufferSeconds": 25.093333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 630.321,
+      "position": 630.93,
+      "segment": "15",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 630.9333333333333,
+          "bufferSeconds": 25.066666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 660.337,
+      "position": 660.96,
+      "segment": "16",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 660.96,
+          "bufferSeconds": 25.04,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 690.358,
+      "position": 690.99,
+      "segment": "17",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 690.9866666666667,
+          "bufferSeconds": 25.013333333333332,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 720.374,
+      "position": 720.96,
+      "segment": "17",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 720.96,
+          "bufferSeconds": 25.04,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 750.397,
+      "position": 750.99,
+      "segment": "18",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 750.9866666666667,
+          "bufferSeconds": 25.013333333333332,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 780.405,
+      "position": 781.01,
+      "segment": "19",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 781.0133333333333,
+          "bufferSeconds": 24.986666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 810.414,
+      "position": 811.04,
+      "segment": "20",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 811.04,
+          "bufferSeconds": 24.96,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 840.424,
+      "position": 841.01,
+      "segment": "20",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 841.0133333333333,
+          "bufferSeconds": 24.986666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 870.432,
+      "position": 871.04,
+      "segment": "21",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 871.04,
+          "bufferSeconds": 24.96,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 900.441,
+      "position": 901.07,
+      "segment": "22",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 901.0666666666667,
+          "bufferSeconds": 24.933333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 930.457,
+      "position": 931.04,
+      "segment": "23",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 931.04,
+          "bufferSeconds": 24.96,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 960.461,
+      "position": 961.07,
+      "segment": "23",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 961.0666666666667,
+          "bufferSeconds": 24.933333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 990.472,
+      "position": 991.09,
+      "segment": "24",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 991.0933333333334,
+          "bufferSeconds": 24.906666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1020.486,
+      "position": 1021.12,
+      "segment": "25",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1021.0666666666667,
+          "bufferSeconds": 24.933333333333334,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1050.491,
+      "position": 1051.09,
+      "segment": "25",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1051.0933333333332,
+          "bufferSeconds": 24.906666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1080.513,
+      "position": 1081.12,
+      "segment": "26",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1081.12,
+          "bufferSeconds": 24.88,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1110.53,
+      "position": 1111.15,
+      "segment": "27",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1111.1466666666668,
+          "bufferSeconds": 24.85333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1140.548,
+      "position": 1141.17,
+      "segment": "27",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1141.1733333333334,
+          "bufferSeconds": 24.826666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1170.561,
+      "position": 1171.15,
+      "segment": "28",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1171.1466666666668,
+          "bufferSeconds": 24.85333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1200.58,
+      "position": 1201.17,
+      "segment": "29",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1201.1733333333334,
+          "bufferSeconds": 24.826666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1230.588,
+      "position": 1231.2,
+      "segment": "30",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1231.2,
+          "bufferSeconds": 24.8,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1260.599,
+      "position": 1261.23,
+      "segment": "30",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1261.2266666666667,
+          "bufferSeconds": 24.773333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1290.607,
+      "position": 1291.2,
+      "segment": "31",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1291.2,
+          "bufferSeconds": 24.8,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1320.621,
+      "position": 1321.23,
+      "segment": "32",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1321.2266666666667,
+          "bufferSeconds": 24.773333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1350.636,
+      "position": 1351.25,
+      "segment": "33",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1351.2533333333333,
+          "bufferSeconds": 24.746666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1380.658,
+      "position": 1381.28,
+      "segment": "33",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1381.28,
+          "bufferSeconds": 24.72,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1410.673,
+      "position": 1411.25,
+      "segment": "34",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1411.2533333333333,
+          "bufferSeconds": 24.746666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1440.692,
+      "position": 1441.28,
+      "segment": "35",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1441.28,
+          "bufferSeconds": 24.72,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1470.704,
+      "position": 1471.31,
+      "segment": "36",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1471.3066666666666,
+          "bufferSeconds": 24.69333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1500.71,
+      "position": 1501.33,
+      "segment": "36",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1501.3333333333333,
+          "bufferSeconds": 24.666666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1530.73,
+      "position": 1531.36,
+      "segment": "37",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1531.36,
+          "bufferSeconds": 24.64,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1560.751,
+      "position": 1561.33,
+      "segment": "38",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1561.3333333333333,
+          "bufferSeconds": 24.666666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1590.764,
+      "position": 1591.36,
+      "segment": "38",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1591.36,
+          "bufferSeconds": 24.64,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1620.782,
+      "position": 1621.39,
+      "segment": "39",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1621.3866666666668,
+          "bufferSeconds": 24.613333333333333,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1650.792,
+      "position": 1651.41,
+      "segment": "40",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1651.4133333333334,
+          "bufferSeconds": 24.586666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1680.808,
+      "position": 1681.44,
+      "segment": "40",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1681.44,
+          "bufferSeconds": 24.56,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1710.826,
+      "position": 1711.41,
+      "segment": "41",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1711.4133333333334,
+          "bufferSeconds": 24.586666666666666,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1740.844,
+      "position": 1741.44,
+      "segment": "42",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1741.44,
+          "bufferSeconds": 24.56,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1770.864,
+      "position": 1771.47,
+      "segment": "43",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1771.4666666666667,
+          "bufferSeconds": 24.533333333333335,
+          "stalls": 0
+        },
+        "history": []
+      }
+    },
+    {
+      "wallSeconds": 1800.882,
+      "position": 1801.49,
+      "segment": "43",
+      "telemetry": {
+        "session": 12,
+        "progress": {
+          "type": "progress",
+          "runId": "aad579c943754059b08aa21d61180818",
+          "playedSeconds": 1801.4933333333333,
+          "bufferSeconds": 24.506666666666668,
+          "stalls": 0
+        },
+        "history": []
+      }
+    }
+  ],
+  "errors": [],
+  "continuousSeconds": 1801.49,
+  "passed": true
+}

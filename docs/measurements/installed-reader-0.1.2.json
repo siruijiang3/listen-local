@@ -1,0 +1,74 @@
+{
+  "started": "2026-09-24T01:45:07.072Z",
+  "checks": [
+    {
+      "name": "paused keyboard seek",
+      "detail": {
+        "pausedAt": 10.53
+      }
+    },
+    {
+      "name": "drag holds preview and commits outside slider",
+      "detail": {
+        "held": 1002.17
+      }
+    },
+    {
+      "name": "text to audio mapping",
+      "detail": {
+        "segment": 2,
+        "start": 88.24
+      }
+    },
+    {
+      "name": "manual browsing and return to narration",
+      "detail": {}
+    },
+    {
+      "name": "cancel preview while playing",
+      "detail": {}
+    },
+    {
+      "name": "playing mouse seek",
+      "detail": {
+        "playingAt": 316.19
+      }
+    },
+    {
+      "name": "bounded long chapter window",
+      "detail": {}
+    },
+    {
+      "name": "text selection does not seek",
+      "detail": {}
+    },
+    {
+      "name": "playback continues away from reader",
+      "detail": {}
+    },
+    {
+      "name": "pending text leaves playback and generation unchanged",
+      "detail": {}
+    },
+    {
+      "name": "audio seek crosses chapter and selects source",
+      "detail": {}
+    },
+    {
+      "name": "text click switches back across chapters",
+      "detail": {}
+    },
+    {
+      "name": "close and reopen preserves position",
+      "detail": {}
+    },
+    {
+      "name": "exact ending and explicit replay",
+      "detail": {}
+    }
+  ],
+  "samples": [],
+  "errors": [],
+  "continuousSeconds": 0,
+  "passed": true
+}

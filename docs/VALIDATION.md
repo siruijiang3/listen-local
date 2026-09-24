@@ -10,9 +10,15 @@ Seven frontend tests and seventeen Python tests pass. Added regressions cover de
 
 The packaged 0.1.2 core generated three distinct paragraphs for each of Serena, Uncle Fu and Aiden on CUDA. Each produced exactly three completed fragments with matching source/sample ranges; partial reader indices were observed during generation. Audio durations were 11.92 / 15.60 / 10.96 seconds and generation times 5.097 / 6.617 / 4.676 seconds. These are regression samples, not a new statistical latency benchmark. See `measurements/paragraph-generation-0.1.2.json`.
 
-Native reader interaction and continuous-playback results are recorded separately below when the final run finishes; interrupted development runs are not counted as 30-minute passes.
+The final native Tauri/WebView2 0.1.2 build passed fourteen UI scenarios: paused keyboard seeking, holding a drag and releasing outside the slider, text-to-audio mapping, manual browsing and return, cancelling a seek, seeking while playing, bounded chapter rendering, text selection without playback changes, background playback outside the reader, pending-text clicks, audio/source jumps across chapters, close/reopen position retention, and exact ending/replay. Its executable SHA-256 was `dc369a3df7c05b3101d211b3e0a35ef39aa2b1e8d6fbc5d671b3d96c5d94049b`.
+
+It then played the existing Serena archive continuously for **1,800.882 seconds of measured wall time** and **1,801.49 seconds of audio position**, with **zero AudioWorklet underruns and zero JavaScript errors**. Sixty samples at approximately thirty-second intervals confirmed a single unchanged player session and the matching source fragment; playback reached fragment 44. The small difference between wall time and audio position is the initial playback before the continuous-run timer starts. No seek, reload or restart occurred during this interval. See `measurements/native-reader-0.1.2.json` and the native harness described in DEVELOPMENT.md. This is one-voice archived-audio native playback acceptance; it does not complete the three-voice live-generation/acoustic-latency requirements. Interrupted development runs were not counted.
+
+The Windows installer is **43,924,796 bytes**, SHA-256 `ae5e329d6b3e189faf47787039b21749278feaf76183179d8a469c6804e8b5aa`. [Windows CI for the implementation](https://github.com/siruijiang3/listen-local/actions/runs/35942254928) and [the additional real-generation test scripts](https://github.com/siruijiang3/listen-local/actions/runs/35942764089) both passed.
 
 A separate headless Edge functional test exercised the React reader against the real packaged CUDA core while four different natural paragraphs were being generated. It verified pending-text clicks, frozen drag range during growth, synthesis continuing while playback was paused, and all four newly completed paragraphs becoming clickable at their measured sample starts. The job produced 66.96 seconds of audio in 29.007 seconds of generation with no JavaScript errors. This is functional browser evidence, distinct from the native WebView2 continuous-playback run. See `measurements/live-reader-0.1.2.json` and `scripts/check-reader-live.cjs`.
+
+The NSIS installer updated the existing local installation to 0.1.2 with exit code 0. The installed app then passed all fourteen interaction scenarios again; this short repeat did not repeat the 30-minute run. Original library/runtime/model settings were restored after both UI runs. The installed executable SHA-256 is `675376ea5282059255430b2ee2672c017163861ba1b731a2761eb63dcd2a7ccc`; a complete byte comparison against the native validation executable found only Tauri's three-byte bundle-type marker change from `UNK` to `NSS`. The packaged core hashes are identical. See `measurements/installed-reader-0.1.2.json`.
 
 ## Native engine measurements
 
@@ -51,7 +57,7 @@ The first public Windows CI run passed: https://github.com/siruijiang3/listen-lo
 
 A real CPU task was interrupted through the tray-equivalent shutdown API, restarted as **paused**, resumed, and exported successfully. One completed segment remained byte-for-byte unchanged; all three segments were present at completion. See `measurements/recovery.json` and its runnable validation script. This covers controlled exit during inference, not every forced-crash phase.
 
-Several development-preview playback sessions ran without reported underruns, but were interrupted by development hot reload. **There is no valid uninterrupted 30-minute playback pass in this release record.** The 49-minute generated archive is not a substitute for that test. Native WebView2 playback acceptance remains open.
+During 0.1.1 development, several preview playback sessions ran without reported underruns but were interrupted by hot reload; those were not valid uninterrupted 30-minute passes. The separate 0.1.2 native playback result above now covers one existing Serena recording. The earlier 49-minute generated archive alone was throughput evidence, not playback acceptance; full three-voice acceptance remains open.
 
 ## Download sizes
 
